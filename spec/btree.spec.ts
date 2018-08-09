@@ -1,4 +1,4 @@
-import { BinaryTree } from '../classes/btree';
+import { BinaryTree } from '../src/classes/btree';
 import "jasmine";
 
 describe('Binary tree', () => {

@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
     "target": "es5",                         
-    "module": "amd" ,
+    "module": "commonjs" ,
     "removeComments": true,
     "outFile": "dist/bundle.js",
     "sourceMap": true    
   },
   "include": [
-    "classes/**/*",
-    "spec/**/*/*"
+    "src/classes/**/*"
   ],
   "exclude": [
         "node_modules"
