@@ -1,7 +1,16 @@
 {
   "compilerOptions": {
-    /* Basic Options */
     "target": "es5",                         
-    "module": "commonjs"  
-  }                  
+    "module": "amd" ,
+    "removeComments": true,
+    "outFile": "dist/bundle.js",
+    "sourceMap": true    
+  },
+  "include": [
+    "classes/**/*",
+    "spec/**/*/*"
+  ],
+  "exclude": [
+        "node_modules"
+  ]
 }

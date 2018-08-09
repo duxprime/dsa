@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A test bed for data structures and algorithms in JS.",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
