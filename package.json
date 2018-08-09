@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "A test bed for data structures and algorithms in JS.",
   "scripts": {
-    "test": "test"
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/duxprime/dsa.git"
   },
   "author": "Chris Duxbury",
-  "homepage": "https://github.com/duxprime/dsa#readme"
+  "homepage": "https://github.com/duxprime/dsa#readme",
+  "devDependencies": {
+    "jasmine": "^3.1.0"
+  }
 }
