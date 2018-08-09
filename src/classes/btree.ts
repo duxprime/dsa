@@ -1,4 +1,4 @@
-class BinaryTree<T> {
+export class BinaryTree<T> {
     public static fromArray(arr:any[]) {
         let btree = new BinaryTree();
         arr.forEach(i => {
