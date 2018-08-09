@@ -1,0 +1,14 @@
+{
+  "name": "dsa",
+  "version": "1.0.0",
+  "description": "A test bed for data structures and algorithms in JS.",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duxprime/dsa.git"
+  },
+  "author": "Chris Duxbury",
+  "homepage": "https://github.com/duxprime/dsa#readme"
+}
