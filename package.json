@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A testbed for data structures and algorithms in JS.",
   "scripts": {
-    "test": "npm run build && jasmine && npm run clean",
+    "test": "npm run build && jasmine-node dist/spec --verbose && npm run clean",
     "build": "tsc",
     "clean": "del-cli dist"
   },
@@ -16,8 +16,7 @@
   "devDependencies": {
     "@types/jasmine": "^2.8.8",
     "del-cli": "^1.1.0",
-    "jasmine": "^3.2.0",
-    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine-node": "^1.15.0",
     "typescript": "^3.0.1"
   }
 }
