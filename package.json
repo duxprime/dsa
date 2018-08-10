@@ -1,10 +1,11 @@
 {
   "name": "dsa",
   "version": "1.0.0",
-  "description": "A test bed for data structures and algorithms in JS.",
+  "description": "A testbed for data structures and algorithms in JS.",
   "scripts": {
-    "test": "jasmine-ts \"spec/**/*.spec.ts\"",
-    "build": "tsc"
+    "test": "npm run build && jasmine && npm run clean",
+    "build": "tsc",
+    "clean": "del-cli dist"
   },
   "repository": {
     "type": "git",
@@ -14,8 +15,9 @@
   "homepage": "https://github.com/duxprime/dsa#readme",
   "devDependencies": {
     "@types/jasmine": "^2.8.8",
+    "del-cli": "^1.1.0",
+    "jasmine": "^3.2.0",
     "jasmine-spec-reporter": "^4.2.1",
-    "jasmine-ts": "^0.2.1",
     "typescript": "^3.0.1"
   }
 }

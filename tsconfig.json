@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "target": "es5",                         
+    "target": "es6",                         
     "module": "commonjs" ,
     "removeComments": true,
-    "outFile": "dist/bundle.js",
-    "sourceMap": true    
+    "sourceMap": true,
+    "outDir": "dist" 
   },
   "include": [
-    "src/classes/**/*"
+    "spec/**/*.spec.ts"
   ],
   "exclude": [
-        "node_modules"
+      "node_modules"
   ]
 }
