@@ -15,8 +15,11 @@
   "homepage": "https://github.com/duxprime/dsa#readme",
   "devDependencies": {
     "@types/jasmine": "^2.8.8",
+    "@types/lodash": "^4.14.116",
     "del-cli": "^1.1.0",
+    "jasmine": "^3.2.0",
     "jasmine-node": "^1.15.0",
+    "lodash": "^4.17.10",
     "typescript": "^3.0.1"
   }
 }
