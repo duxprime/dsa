@@ -7,12 +7,19 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${file}",
-            "preLaunchTask": "tsc: build - tsconfig.json",
+            "name": "Launch Jasmine",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script",
+                "test:debug"
+            ],
+            
             "outFiles": [
-                "${workspaceFolder}/dist/**/*.js"
-            ]
+                "${workspaceRoot}/dist/**/*.js"
+            ],
+            "protocol": "inspector",
+            "port": 9229,
+            "sourceMaps": true
         }
     ]
 }
