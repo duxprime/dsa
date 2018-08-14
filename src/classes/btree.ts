@@ -54,10 +54,10 @@ export class BinaryTree<T> {
     public traversePreOrder(callback:TraversalCallback<T> = noop){
         callback(this.value);
         if(this.left){
-            this.left.traverseInOrder(callback);
+            this.left.traversePreOrder(callback);
         }
         if(this.right){
-            this.right.traverseInOrder(callback);
+            this.right.traversePreOrder(callback);
         }
     }
 
