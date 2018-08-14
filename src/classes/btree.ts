@@ -4,8 +4,8 @@ interface TraversalCallback<T> {
 import { noop } from '../library/standard-types';
 
 export class BinaryTree<T> {
-    public static fromArray(arr:any[]) {
-        let btree = new BinaryTree();
+    public static fromArray<T>(arr:T[]) {
+        let btree = new BinaryTree<T>();
         arr.forEach(i => {
             btree.insert(i);
         });
