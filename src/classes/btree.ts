@@ -1,6 +1,7 @@
 interface TraversalCallback<T> {
     (value:T):void;
 }
+import { noop } from '../library/standard-types';
 
 export class BinaryTree<T> {
     public static fromArray(arr:any[]) {
@@ -40,7 +41,7 @@ export class BinaryTree<T> {
         }
     }
 
-    public traverseInOrder(callback?:TraversalCallback<T>) {
+    public traverseInOrder(callback:TraversalCallback<T> = noop) {
         if(this.left){
             this.left.traverseInOrder(callback);
         }
@@ -50,7 +51,7 @@ export class BinaryTree<T> {
         }
     }
 
-    public traversePreOrder(callback?:TraversalCallback<T>){
+    public traversePreOrder(callback:TraversalCallback<T> = noop){
         callback(this.value);
         if(this.left){
             this.left.traverseInOrder(callback);
@@ -60,7 +61,7 @@ export class BinaryTree<T> {
         }
     }
 
-    public traversePostOrder(callback?:TraversalCallback<T>){
+    public traversePostOrder(callback:TraversalCallback<T> = noop){
         if(this.left){
             this.left.traversePostOrder(callback);
         }
