@@ -1,3 +1,7 @@
+interface TraversalCallback<T> {
+    (value:T):void;
+}
+
 export class BinaryTree<T> {
     public static fromArray(arr:any[]) {
         let btree = new BinaryTree();
@@ -36,17 +40,37 @@ export class BinaryTree<T> {
         }
     }
 
-    public traverseInOrder(callback?:Function) {
+    public traverseInOrder(callback?:TraversalCallback<T>) {
         if(this.left){
-            this.left.traverseInOrder();
+            this.left.traverseInOrder(callback);
         }
         callback(this.value);
         if(this.right){
-            this.right.traverseInOrder();
+            this.right.traverseInOrder(callback);
         }
     }
 
-   public traverseBreadthFirst(callback?:Function){
+    public traversePreOrder(callback?:TraversalCallback<T>){
+        callback(this.value);
+        if(this.left){
+            this.left.traverseInOrder(callback);
+        }
+        if(this.right){
+            this.right.traverseInOrder(callback);
+        }
+    }
+
+    public traversePostOrder(callback?:TraversalCallback<T>){
+        if(this.left){
+            this.left.traversePostOrder(callback);
+        }
+        if(this.right){
+            this.right.traversePostOrder(callback);
+        }
+        callback(this.value);
+    }
+
+   public traverseBreadthFirst(callback?:TraversalCallback<T>){
         let queue:BinaryTree<T>[] = [this];
         while(queue.length > 0){
             let node = queue.shift();
