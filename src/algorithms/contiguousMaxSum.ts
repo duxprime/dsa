@@ -24,8 +24,10 @@ export function getContiguousMaxSum(arr:number[]) {
             newRun = false;
         }
 
-        endingIndex = i;    
-        maxSum = Math.max(currentMaxSum, maxSum);  
+        if(currentMaxSum >= maxSum){
+            endingIndex = i;
+            maxSum = currentMaxSum;
+        } 
     });
 
     return {
