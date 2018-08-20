@@ -14,13 +14,12 @@ const arr = [
 ];
 
 describe('Binary tree', () => {
-    debugger;
     let btree:BinaryTree<number>;
     beforeEach(() => {
         btree = BinaryTree.fromArray(arr);
     });
 
-    it('should traverse in order', () => {
+    xit('should traverse in order', () => {
         debugger;
         const sortedArr = [
             0,
