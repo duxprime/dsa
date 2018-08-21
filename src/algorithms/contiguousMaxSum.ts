@@ -8,21 +8,16 @@ export function getContiguousMaxSum(arr:number[]) {
     let currentMaxSum = 0;
     let startingIndex = 0;
     let endingIndex = 0;
-    let newRun = true;
 
     arr.forEach((num, i) => {
         currentMaxSum += num;
-        if(currentMaxSum < 1) {
+
+        // the current run is ending
+        if(currentMaxSum < 0) {
             currentMaxSum = 0;
-            endingIndex = startingIndex = i;
-            newRun = true;
+            endingIndex = startingIndex = i + 1;
             return;
         }            
-
-        if(newRun){
-            startingIndex = i;
-            newRun = false;
-        }
 
         if(currentMaxSum >= maxSum){
             endingIndex = i;
