@@ -5,29 +5,31 @@
  */
 export function getContiguousMaxSum(arr:number[]) {
     let maxSum = 0;
-    let currentMaxSum = 0;
-    let startingIndex = 0;
-    let endingIndex = 0;
+    let currentSum = 0;
+    let startIndex = 0;
+    let endIndex = 0;
+    let tempStart = 0;
 
     arr.forEach((num, i) => {
-        currentMaxSum += num;
+        currentSum += num;
 
         // the current run is ending
-        if(currentMaxSum < 0) {
-            currentMaxSum = 0;
-            endingIndex = startingIndex = i + 1;
+        if(currentSum < 0) {
+            currentSum = 0;
+            tempStart = i + 1;
             return;
         }            
 
-        if(currentMaxSum >= maxSum){
-            endingIndex = i;
-            maxSum = currentMaxSum;
+        if(currentSum >= maxSum){
+            endIndex = i;
+            startIndex = tempStart;
+            maxSum = currentSum;
         } 
     });
 
     return {
         sum: maxSum,
-        start: startingIndex,
-        end: endingIndex
+        start: startIndex,
+        end: endIndex
     };
 }
