@@ -25,6 +25,7 @@ describe('Binary tree', () => {
         expect(btree.value).toBeNull();
         expect(btree.right).toBeNull();
         expect(btree.left).toBeNull();
+        expect(btree.count).toEqual(1);
     });
 
     it('should construct a binary tree with a value', () => {
@@ -33,7 +34,26 @@ describe('Binary tree', () => {
         expect(btree.value).toEqual(value);
         expect(btree.right).toBeNull();
         expect(btree.left).toBeNull();
+        expect(btree.count).toEqual(1);
     }); 
+
+    it('should construct a binary tree by inserting values', () => {
+        const values = {
+            root: 5,
+            left: 3,
+            right: 7
+        };
+        btree = new BinaryTree(values.root);
+        btree.insert(values.left);
+        btree.insert(values.right);
+
+        expect(btree.value).toEqual(values.root);
+        expect(btree.right.value).toBe(values.right);
+        expect(btree.left.value).toBe(values.left);
+        expect(btree.count).toEqual(3);
+        expect(btree.left.count).toEqual(1);
+        expect(btree.right.count).toEqual(1);
+    });
 
     it('should traverse in order', () => {
         const sortedArr = [
