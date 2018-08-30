@@ -18,7 +18,9 @@ export class BinaryTree<T> {
     public left:BinaryTree<T> = null;
 
     constructor(value?:T) {
-        this.value = value;
+        if(typeof value !== 'undefined'){
+            this.value = value;
+        }
     }
 
     public insert = function(value) {
