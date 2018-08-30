@@ -4,6 +4,8 @@ interface TraversalCallback<T> {
 import { noop } from '../library/standard-types';
 
 export class BinaryTree<T> {
+    private _count = 1;
+
     public static fromArray<T>(arr:T[]) {
         let btree = new BinaryTree<T>();
         arr.forEach(i => {
@@ -17,6 +19,13 @@ export class BinaryTree<T> {
     public right:BinaryTree<T> = null;
     public left:BinaryTree<T> = null;
 
+    /**
+     * The number of nodes contained in the tree, including itself.
+     */
+    public get count() {
+        return this._count;
+    }
+
     constructor(value?:T) {
         if(typeof value !== 'undefined'){
             this.value = value;
@@ -28,6 +37,7 @@ export class BinaryTree<T> {
             this.value = value;
         }
         else if(value > this.value){
+            this._count++;
             if(this.right === null){
                 this.right = new BinaryTree();
             }
@@ -35,6 +45,7 @@ export class BinaryTree<T> {
             this.right.insert(value);
         }
         else if(value < this.value){
+            this._count++;
             if(this.left === null){
                 this.left = new BinaryTree();
             }
