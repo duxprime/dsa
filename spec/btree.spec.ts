@@ -19,8 +19,23 @@ describe('Binary tree', () => {
         btree = BinaryTree.fromArray(arr);
     });
 
-    xit('should traverse in order', () => {
-        debugger;
+ 
+    it('should construct an empty binary tree', () => {
+        btree = new BinaryTree();
+        expect(btree.value).toBeNull();
+        expect(btree.right).toBeNull();
+        expect(btree.left).toBeNull();
+    });
+
+    it('should construct a binary tree with a value', () => {
+        const value = 5;
+        btree = new BinaryTree(5);
+        expect(btree.value).toEqual(value);
+        expect(btree.right).toBeNull();
+        expect(btree.left).toBeNull();
+    }); 
+
+    it('should traverse in order', () => {
         const sortedArr = [
             0,
             1,
@@ -35,7 +50,6 @@ describe('Binary tree', () => {
         ];
         let arr = [];
         btree.traverseInOrder(i => {
-            console.log(i);
             arr.push(i);
         })
 
