@@ -17,3 +17,17 @@ export function getLargestInProductModulus(num1:number, num2:number){
 
     return largest;
 }
+
+export function getLargestInProductString(num1:number, num2:number){
+    const productParts = (num1 * num2).toString().split('');
+    let largest = 0;
+    
+    while(productParts.length > 0){
+        let current = +productParts.pop();
+        if(current > largest){
+            largest = current;
+        }
+    }
+
+    return largest;
+}

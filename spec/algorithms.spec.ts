@@ -1,6 +1,9 @@
 import 'jasmine';
 import { getContiguousMaxSum } from '../src/algorithms/contiguousMaxSum';
-import { getLargestInProductModulus } from '../src/algorithms/largestIntegerProduct';
+import { 
+    getLargestInProductModulus, 
+    getLargestInProductString 
+} from '../src/algorithms/largestIntegerProduct';
 
 describe('algorithms', () => {
     describe('#Kadane\'s algorithm',() => {        
@@ -28,10 +31,15 @@ describe('algorithms', () => {
         });        
     });
 
-    describe('largest integer in product', () => {
-        it('should find the largest integer using modulus', () => {
-            let result  = getLargestInProductModulus(25, 5);
-            expect(result).toBe(5);
-        });
+    describe('#largest integer in product', () => {
+        const test = (fn:(num1:number, num2:number) => number) => {
+            return () => {
+                let result = fn(25, 5);
+                expect(result).toEqual(5);
+            };
+        };
+
+        it('should find the largest integer using modulus', test(getLargestInProductModulus));
+        it('should find the largest integer using a string array', test(getLargestInProductString));
     });
 });
