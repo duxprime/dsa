@@ -1,20 +1,9 @@
-import { mergeSortRecursive } from 'sorting/merge-sort';
+import { mergeSortRecursive } from '../src/sorting/merge-sort';
+import { quickSort } from '../src/sorting/quick-sort';
 import "jasmine";
 
 describe('Sorting tests', () => {
-    const items = [
-        5,
-        1,
-        9,
-        4,
-        2,
-        7,
-        6,
-        6,
-        3,
-        8
-    ];
-
+    let items:number[];
     const sorted = [
         1,
         2,
@@ -27,10 +16,30 @@ describe('Sorting tests', () => {
         8,
         9
     ];
+    beforeEach(() => {
+       items = [
+            5,
+            1,
+            9,
+            4,
+            2,
+            7,
+            6,
+            6,
+            3,
+            8
+        ];
+    });
 
     describe('#Merge sort', () => {
         it('should correctly sort', () => {
             expect(mergeSortRecursive(items)).toEqual(sorted);
+        });
+    });
+
+    describe('#Quick sort', () => {
+        it('should correctly sort', () => {
+            expect(quickSort(items)).toEqual(sorted);
         });
     });
 });
