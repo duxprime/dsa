@@ -5,11 +5,7 @@
     "module": "commonjs" ,
     "removeComments": true,
     "sourceMap": true,
-    "outDir": "./dist" ,
-    "types" :[
-      "node",
-      "jasmine" 
-    ]
+    "outDir": "./dist" 
   },
   "include": [
     "spec/**/*.spec.ts"
