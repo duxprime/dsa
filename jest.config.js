@@ -24,6 +24,12 @@ module.exports = {
     "!**/node_modules/**", 
     "!**/vendor/**"
   ],
+  rootDir: "./",
+  moduleNameMapper: {
+    "@algo": "<rootDir>/src/algorithms",
+    "@lib" : "<rootDir>/src/library",
+    "@sort" : "<rootDir>/src/sorting",
+  },
   coverageReporters: [
     "json", 
     "lcov"
