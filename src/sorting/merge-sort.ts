@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-export function mergeSortRecursive<T>(items:T[]){
+export function mergeSortRecursive<T>(items:T[]):T[]{
     if(items.length <= 1){
         return items;
     }
