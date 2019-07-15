@@ -1,6 +1,5 @@
 import { mergeSortRecursive } from '../src/sorting/merge-sort';
 import { quickSort } from '../src/sorting/quick-sort';
-import "jasmine";
 
 describe('Sorting tests', () => {
     let items:number[];
