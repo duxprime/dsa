@@ -8,7 +8,7 @@ export function quickSort<T>(arr:T[]):T[] {
     return arr;
 }
 
-function sort(arr:any[], low:number, high:number){ 
+function sort<T>(arr:T[], low:number, high:number){ 
     if((high > arr.length - 1) || (high - low < 2)){
         return;
     }
@@ -34,7 +34,7 @@ function partition<T>(arr:T[], low:number, high:number){
     return pivot;
 }
 
-function swap(arr:any[], i1:number, i2:number){
+function swap<T>(arr:T[], i1:number, i2:number){
     let temp = arr[i1];
     arr[i1] = arr[i2];
     arr[i2] = temp;
