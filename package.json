@@ -6,7 +6,7 @@
     "build": "tsc",
     "clean": "del-cli dist",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watchAll",
     "test:debug":  "node --inspect-brk node_modules/jest/bin/jest.js --runInBand --config jest.config.js"
   },
   "repository": {
