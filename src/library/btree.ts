@@ -1,7 +1,7 @@
 interface TraversalCallback<T> {
     (value:T):void;
 }
-import { noop } from '../library/standard-types';
+import { noop } from '@lib';
 
 export class BinaryTree<T> {
     private _count = 1;

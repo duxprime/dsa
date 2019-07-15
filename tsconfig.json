@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "target": "es6",                         
     "module": "commonjs" ,
     "removeComments": true,
     "sourceMap": true,
-    "outDir": "./dist" 
+    "outDir": "./dist",
+    "paths": {
+      "@lib": ["library"],
+      "@algo": ["algorithms"],
+      "@sort": ["sorting"]
+    }
   },
   "include": [
     "spec/**/*.spec.ts"

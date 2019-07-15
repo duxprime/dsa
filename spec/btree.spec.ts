@@ -1,5 +1,5 @@
-import { BinaryTree } from '../src/classes/btree';
-import 'jasmine';
+import { BinaryTree } from '@lib';
+
 const arr = [
     6,
     9,

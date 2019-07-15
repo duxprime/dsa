@@ -1,9 +1,8 @@
-import 'jasmine';
-import { getContiguousMaxSum } from '../src/algorithms/contiguousMaxSum';
 import { 
+    getContiguousMaxSum,
     getLargestInProductModulus, 
     getLargestInProductString 
-} from '../src/algorithms/largestIntegerProduct';
+} from '@algo';
 
 describe('algorithms', () => {
     describe('#Kadane\'s algorithm',() => {        
