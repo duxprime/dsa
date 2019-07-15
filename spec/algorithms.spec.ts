@@ -1,5 +1,4 @@
 import { getContiguousMaxSum } from '../src/algorithms/contiguousMaxSum';
-import 'jasmine';
 
 describe('algorithms', () => {
     describe('#Kadane\'s algorithm',() => {        
