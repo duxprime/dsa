@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "A testbed for data structures and algorithms in JS.",
   "scripts": {
-    "prebuild" : "npm run clean",
+    "prebuild": "npm run clean",
     "build": "tsc",
     "clean": "del-cli dist",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "test:debug": "node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/jest/bin/jest.js --watch --no-cache --runInBand"
+    "test:debug": "node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/jest/bin/jest.js --watchAll --no-cache --runInBand"
   },
   "repository": {
     "type": "git",
