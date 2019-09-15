@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A testbed for data structures and algorithms in JS.",
   "scripts": {
+    "prebuild" : "npm run clean",
     "build": "tsc",
     "clean": "del-cli dist",
     "test": "jest",
