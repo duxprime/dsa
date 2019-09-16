@@ -9,29 +9,44 @@ export function quickSort<T>(arr:T[]):T[] {
 }
 
 function sort<T>(arr:T[], low:number, high:number){ 
-    if((high > arr.length - 1) || (high - low < 2)){
+    if(low < 0 ||  (high > arr.length - 1)){
+        throw new Error('Index out of bounds.');
+    }          
+
+    if(high - low < 2){
         return;
     }
+    console.log(arr.slice(low, high + 1));
 
-    let pivot = partition(arr, low, high);
-    sort(arr, low, pivot - 1);
-    sort(arr, pivot + 1, high);
+    const splitPoint = partition(arr, low, high);
+    sort(arr, low, splitPoint - 1);
+    sort(arr, splitPoint + 1, high);
 }
 
 function partition<T>(arr:T[], low:number, high:number){
-    let pivot = generatePivot(low, high);
-    let pivotValue = arr[pivot];
-    for(let i = low; i < high; i++){
-        let elem = arr[i];
-        let greaterThanPivot = i > pivot;
-        let greatherThanValue = elem > pivotValue;
-        if((!greaterThanPivot && greatherThanValue ) || (greaterThanPivot && !greatherThanValue)){
-            swap(arr, i, pivot);
-            pivot = i;
-        }
-    }
+    const pivot = generatePivot(low, high);
+    let left = low
+    let right = high;
 
-    return pivot;
+    do {
+        if(arr[left] > arr[pivot]){
+            do {
+                if(arr[right] < arr[pivot]) {
+                    swap(arr, left, right);
+                    break;
+                }
+                right--;
+            }
+            while(right > left)
+        }
+        left++;
+    }
+    while(left < right)
+
+    const splitPoint = Math.max(right - 1, 0);
+    swap(arr, pivot, splitPoint);
+
+    return splitPoint;
 }
 
 function swap<T>(arr:T[], i1:number, i2:number){
