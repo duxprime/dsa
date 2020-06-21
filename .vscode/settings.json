@@ -4,5 +4,6 @@
         ".vscode/": true,
         ".git":true,
         "dist":true
-    }
+    },
+    "typescript.tsdk": "node_modules\\typescript\\lib"
 }

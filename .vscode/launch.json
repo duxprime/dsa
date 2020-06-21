@@ -5,19 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Jest",
             "type": "node",
             "request": "launch",
-            "name": "Launch Jasmine",
-            "runtimeExecutable": "npm",
-            "runtimeArgs": [
-                "run-script",
-                "test:debug"
+            "args": [
+              "--inspect-brk",
+              "${workspaceRoot}/node_modules/jest/bin/jest.js",
+              "--runInBand"
             ],
-            
-            "outFiles": [
-                "${workspaceRoot}/dist/**/*.js"
-            ],
-            "protocol": "inspector",
+            "preLaunchTask": "npm:build",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
             "port": 9229,
             "sourceMaps": true
         }
