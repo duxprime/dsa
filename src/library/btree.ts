@@ -15,9 +15,9 @@ export class BinaryTree<T> {
         return btree;
     }
 
-    public value:T = null;
-    public right:BinaryTree<T> = null;
-    public left:BinaryTree<T> = null;
+    public value?:T;
+    public right?:BinaryTree<T>;
+    public left?:BinaryTree<T>;
 
     /**
      * The number of nodes contained in the tree, including itself.
@@ -32,13 +32,13 @@ export class BinaryTree<T> {
         }
     }
 
-    public insert = function(value) {
-        if(this.value === null){
+    public insert(value) {
+        if(this.value === undefined){
             this.value = value;
         }
         else if(value > this.value){
             this._count++;
-            if(this.right === null){
+            if(this.right === undefined){
                 this.right = new BinaryTree();
             }
     
@@ -46,7 +46,7 @@ export class BinaryTree<T> {
         }
         else if(value < this.value){
             this._count++;
-            if(this.left === null){
+            if(this.left === undefined){
                 this.left = new BinaryTree();
             }
     
@@ -58,17 +58,25 @@ export class BinaryTree<T> {
         if(this.left){
             this.left.traverseInOrder(callback);
         }
-        callback(this.value);
+
+        if(this.value){
+            callback(this.value);
+        }
+
         if(this.right){
             this.right.traverseInOrder(callback);
         }
     }
 
     public traversePreOrder(callback:TraversalCallback<T> = noop){
-        callback(this.value);
+        if(this.value){
+            callback(this.value);
+        }
+
         if(this.left){
             this.left.traversePreOrder(callback);
         }
+
         if(this.right){
             this.right.traversePreOrder(callback);
         }
@@ -78,17 +86,28 @@ export class BinaryTree<T> {
         if(this.left){
             this.left.traversePostOrder(callback);
         }
+
         if(this.right){
             this.right.traversePostOrder(callback);
         }
-        callback(this.value);
+
+        if(this.value){
+            callback(this.value);
+        }
     }
 
    public traverseBreadthFirst(callback?:TraversalCallback<T>){
         let queue:BinaryTree<T>[] = [this];
         while(queue.length > 0){
             let node = queue.shift();
-            callback(node.value);
+            if(!node){
+                continue;
+            }
+
+            if(callback && node.value){
+                callback(node.value);
+            }
+            
             if(node.left){
                 queue.unshift(node.left);
             }

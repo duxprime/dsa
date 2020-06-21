@@ -3,6 +3,7 @@
     "baseUrl": "src",
     "target": "es6",                         
     "module": "commonjs" ,
+    "strictNullChecks": true,
     "removeComments": true,
     "sourceMap": true,
     "outDir": "./dist",

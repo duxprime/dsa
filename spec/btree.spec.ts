@@ -22,9 +22,9 @@ describe('Binary tree', () => {
  
     it('should construct an empty binary tree', () => {
         btree = new BinaryTree();
-        expect(btree.value).toBeNull();
-        expect(btree.right).toBeNull();
-        expect(btree.left).toBeNull();
+        expect(btree.value).toBeUndefined();
+        expect(btree.right).toBeUndefined();
+        expect(btree.left).toBeUndefined();
         expect(btree.count).toEqual(1);
     });
 
@@ -32,8 +32,8 @@ describe('Binary tree', () => {
         const value = 5;
         btree = new BinaryTree(5);
         expect(btree.value).toEqual(value);
-        expect(btree.right).toBeNull();
-        expect(btree.left).toBeNull();
+        expect(btree.right).toBeUndefined();
+        expect(btree.left).toBeUndefined();
         expect(btree.count).toEqual(1);
     }); 
 
@@ -48,11 +48,11 @@ describe('Binary tree', () => {
         btree.insert(values.right);
 
         expect(btree.value).toEqual(values.root);
-        expect(btree.right.value).toBe(values.right);
-        expect(btree.left.value).toBe(values.left);
+        expect(btree.right?.value).toBe(values.right);
+        expect(btree.left?.value).toBe(values.left);
         expect(btree.count).toEqual(3);
-        expect(btree.left.count).toEqual(1);
-        expect(btree.right.count).toEqual(1);
+        expect(btree.left?.count).toEqual(1);
+        expect(btree.right?.count).toEqual(1);
     });
 
     it('should traverse in order', () => {
@@ -68,7 +68,7 @@ describe('Binary tree', () => {
             8,
             9
         ];
-        let arr = [];
+        let arr:number[] = [];
         btree.traverseInOrder(i => {
             arr.push(i);
         })

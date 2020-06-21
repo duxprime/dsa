@@ -22,7 +22,12 @@ export function getLargestInProductString(num1:number, num2:number){
     let largest = 0;
 
     while(productParts.length > 0){
-        let current = +productParts.pop();
+        let currentString = productParts.pop();
+        if(!currentString){
+            break;
+        }
+
+        let current = +currentString;
         if(current > largest){
             largest = current;
         }
