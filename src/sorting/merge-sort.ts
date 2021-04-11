@@ -17,7 +17,7 @@ function merge<T>(left:T[], right:T[]){
     let merged:T[] = [];
 
     while(left.length > 0 || right.length > 0){
-        let smallest;
+        let smallest:T|undefined;
         let leftItem = left[0];
         let rightItem = right[0];
 
@@ -32,6 +32,10 @@ function merge<T>(left:T[], right:T[]){
         }
         else {
             smallest = right.shift();
+        }
+
+        if(!smallest){
+            throw new Error('Could not find smallest');
         }
 
         merged.push(smallest);

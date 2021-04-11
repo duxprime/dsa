@@ -32,7 +32,7 @@ export class BinaryTree<T> {
         }
     }
 
-    public insert(value) {
+    public insert(value:T) {
         if(this.value === undefined){
             this.value = value;
         }
