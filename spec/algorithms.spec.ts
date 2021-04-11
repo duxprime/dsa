@@ -1,7 +1,9 @@
 import { 
     getContiguousMaxSum,
     getLargestInProductModulus, 
-    getLargestInProductString 
+    getLargestInProductString,
+    findPatientZero,
+    PatientList 
 } from '@algo';
 
 describe('algorithms', () => {
@@ -40,5 +42,31 @@ describe('algorithms', () => {
 
         it('should find the largest integer using modulus', test(getLargestInProductModulus));
         it('should find the largest integer using a string array', test(getLargestInProductString));
+    });
+
+    describe('#patient zero', () => {
+        it('should find a single, linear patient zero', () => {
+            const patients:PatientList = [
+                [0, [1]],
+                [1, [2]],
+                [2, [3]]
+            ];
+
+            const patientZero = findPatientZero(patients);
+            expect(patientZero.length).toEqual(1);
+            expect(patientZero[0].value).toEqual(0);
+        });
+
+        it('should find several patient zeroes', () => {
+            const patients:PatientList = [
+                [0, [1, 2]],
+                [3, [4, 5]]
+            ];
+
+            const patientZeroes = findPatientZero(patients);
+            expect(patientZeroes.length).toEqual(2);
+            expect(patientZeroes[0].value).toEqual(0);
+            expect(patientZeroes[1].value).toEqual(3);
+        });
     });
 });
